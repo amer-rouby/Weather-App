@@ -32,9 +32,7 @@ const Weather = () => {
         if(city && country){
             const cityWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`)
             const response = await cityWeather.json();
-        
-            console.log(response);
-    
+
             setWeather(
                 { ...weather,
                     city: `${response.name}, ${response.sys.country}`,
